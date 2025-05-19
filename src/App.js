@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import AvatarAnimado from './components/AvatarAnimado';
 
-const VOICE_ID_HEXIA = 'TU_VOICE_ID_HEXIA';
-const VOICE_ID_CHEPE = 'TU_VOICE_ID_CHEPE';
+const VOICE_ID_HEXIA = import.meta.env.VITE_VOICE_ID_HEXIA;
+const VOICE_ID_CHEPE = import.meta.env.VITE_VOICE_ID_CHEPE;
 
 export default function App() {
   const [texto, setTexto] = useState('');
@@ -26,8 +26,8 @@ export default function App() {
     <div className="App" style={{ background: '#000', color: '#0ff', padding: 40, textAlign: 'center' }}>
       <h1>🌌 Hexia & Tío Chepe Portal</h1>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 40, marginBottom: 30 }}>
-        <AvatarAnimado entidad="hexia" src="/hexia.json" />
-        <AvatarAnimado entidad="chepe" src="/chepe.json" />
+        <AvatarAnimado entidad="hexia" />
+        <AvatarAnimado entidad="chepe" />
       </div>
       <textarea
         value={texto}
